@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
-        publicPath: "./",
+        publicPath: "/"
     },
     mode: "development",
     resolve: {
@@ -21,7 +21,7 @@ module.exports = {
             "@logos": path.resolve(__dirname, "src/assets/logos/"),
             "@context": path.resolve(__dirname, "src/context/"),
             "@hooks": path.resolve(__dirname, "src/hooks/"),
-        },
+        }
     },
     module: {
         rules: [
@@ -47,7 +47,7 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 type: "asset",
-            },
+            }
         ],
     },
     plugins: [
@@ -61,5 +61,8 @@ module.exports = {
     ],
     devServer: {
         historyApiFallback: true,
+        static: path.join(__dirname, "dist"),
+        compress: true,
+        port: 3005,
     },
 };
