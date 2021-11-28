@@ -11,7 +11,6 @@ module.exports = {
     },
     mode: "development",
     resolve: {
-        resolve: {
             extensions: [".js", ".jsx"],
             alias: {
                 "@components": path.resolve(__dirname, "src/components/"),
@@ -63,5 +62,4 @@ module.exports = {
         devServer: {
             historyApiFallback: true,
         },
-    },
 };
